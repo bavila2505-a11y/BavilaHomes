@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renovations — Kitchens, Bathrooms, Basements | Bavila Homes</title>
+<meta name="description" content="Full interior renovations across northern New Jersey. Kitchens, bathrooms, basements and millwork, including structural layout changes, from a framing-first contractor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Bavila Homes — site stylesheet
+   ============================================================ */
+:root{
+  --graphite:#16191A;
+  --ink:#0B0D0E;
+  --ink-2:#131718;
+  --board:#E7E7E1;
+  --paper:#F6F5F1;
+  --paper-2:#EDECE6;
+  --chalk:#1F4FA6;
+  --chalk-lt:#5486D6;
+  --line:rgba(22,25,26,.14);
+  --line-strong:rgba(22,25,26,.28);
+  --line-inv:rgba(231,231,225,.18);
+  --muted:rgba(22,25,26,.62);
+  --muted-inv:rgba(231,231,225,.60);
+
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --wrap:1180px;
+  --pad:clamp(20px,5vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--graphite);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--chalk-lt);outline-offset:3px}
+
+/* ---------- type ---------- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1;text-transform:uppercase;margin:0}
+h1{font-size:clamp(34px,5.6vw,72px);line-height:.98}
+h2{font-size:clamp(27px,3.8vw,46px)}
+h3{font-size:clamp(17px,1.7vw,22px);letter-spacing:-.015em;line-height:1.14}
+h4{font-size:14px;letter-spacing:.01em}
+p{margin:0 0 1.05em}
+.lede{font-size:clamp(17px,1.85vw,20px);line-height:1.55;color:rgba(22,25,26,.82)}
+.dark .lede{color:var(--muted-inv)}
+strong{font-weight:600}
+
+.eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chalk);display:flex;align-items:center;gap:12px;margin:0 0 22px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line-strong)}
+.dark .eyebrow{color:var(--chalk-lt)}
+.dark .eyebrow::after{background:var(--line-inv)}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{padding-top:clamp(58px,8vw,104px);padding-bottom:clamp(58px,8vw,104px)}
+.dark{background:var(--ink);color:var(--board)}
+.tint{background:var(--paper-2)}
+.two{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(28px,5vw,68px);align-items:start}
+@media(max-width:880px){.two{grid-template-columns:1fr;gap:26px}}
+.narrow{max-width:760px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;border:0;cursor:pointer;padding:16px 26px;
+  background:var(--chalk);color:#fff;transition:background .18s ease,transform .18s ease;
+}
+.btn:hover{background:#173D80;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--graphite);box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.btn-ghost:hover{background:var(--graphite);color:var(--paper)}
+.dark .btn-ghost{color:var(--board);box-shadow:inset 0 0 0 1.5px rgba(231,231,225,.3)}
+.dark .btn-ghost:hover{background:var(--board);color:var(--ink)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:80;background:rgba(246,245,241,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);height:72px;display:flex;align-items:center;gap:26px}
+.mark{text-decoration:none;display:flex;flex-direction:column;line-height:1;margin-right:auto}
+.mark b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.035em;text-transform:uppercase}
+.mark span{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+nav.main{display:flex;gap:4px;align-items:center}
+.navitem{position:relative}
+.navlink{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;color:var(--graphite);padding:26px 12px;border-bottom:2px solid transparent;
+}
+.navitem:hover .navlink,.navlink.active{border-bottom-color:var(--chalk);color:var(--chalk)}
+.navlink svg{opacity:.5}
+.drop{
+  position:absolute;top:100%;left:0;min-width:262px;background:var(--ink);
+  border:1px solid var(--line-inv);padding:8px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:.16s ease;
+}
+.navitem:hover .drop,.navitem:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:11px 13px;text-decoration:none;color:var(--board)}
+.drop a:hover{background:rgba(84,134,214,.16)}
+.drop b{display:block;font-family:var(--display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:-.01em}
+.drop span{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted-inv);display:block;margin-top:3px}
+.drop .top{border-bottom:1px solid var(--line-inv);margin-bottom:6px;padding-bottom:12px}
+.tel{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.burger{display:none;background:none;border:0;padding:10px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--graphite);margin:4px 0}
+.tel-m{display:none}
+@media(max-width:1040px){
+  nav.main,.tel{display:none}
+  .burger{display:block}
+  .tel-m{
+    display:inline-flex;align-items:center;gap:7px;margin-left:auto;
+    font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;text-decoration:none;color:#fff;background:var(--chalk);
+    padding:11px 14px;
+  }
+}
+@media(max-width:420px){.mark span{display:none}.tel-m span{display:none}}
+/* mobile menu */
+.mobile{display:none;border-top:1px solid var(--line);background:var(--paper);max-height:76vh;overflow:auto}
+.mobile.open{display:block}
+.mobile .wrap{padding-top:18px;padding-bottom:26px}
+.mgroup{border-bottom:1px solid var(--line);padding:14px 0}
+.mgroup:last-child{border-bottom:0}
+.mgroup>a{display:block;font-family:var(--display);font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;text-decoration:none;margin-bottom:8px}
+.mgroup ul{list-style:none;margin:0;padding:0}
+.mgroup li a{display:block;padding:7px 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+
+/* ---------- page hero ---------- */
+.phero{background:var(--ink);color:var(--board);padding:clamp(40px,6vw,78px) 0 clamp(44px,6vw,80px)}
+.crumbs{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-inv);margin-bottom:26px}
+.crumbs a{text-decoration:none;color:var(--chalk-lt)}
+.crumbs span{margin:0 9px;opacity:.5}
+.phero .lede{color:var(--muted-inv)}
+.phero strong{color:var(--board)}
+.phero h1{margin-bottom:22px}
+.phero .lede{max-width:720px}
+
+/* ---------- home hero ---------- */
+.hhero{padding-top:clamp(40px,5vw,70px);padding-bottom:0}
+.hgrid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(30px,5vw,60px);align-items:center}
+@media(max-width:980px){.hgrid{grid-template-columns:1fr;gap:34px}}
+.hhero h1 em{font-style:normal;color:var(--chalk);display:block}
+.hnote{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:24px;line-height:2}
+
+/* ---------- scope ladder (home signature) ---------- */
+.ladder{background:var(--ink);border:1px solid var(--line-strong)}
+.ladder svg{display:block;width:100%;height:auto}
+.lstates{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-inv)}
+.lbtn{
+  background:none;border:0;border-right:1px solid var(--line-inv);cursor:pointer;
+  padding:14px 8px;color:var(--muted-inv);
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  transition:.16s ease;
+}
+.lbtn:last-child{border-right:0}
+.lbtn:hover{color:var(--board);background:rgba(84,134,214,.1)}
+.lbtn[aria-selected="true"]{color:#fff;background:var(--chalk)}
+.lcap{padding:18px 20px 20px;border-top:1px solid var(--line-inv);background:var(--ink-2);min-height:118px}
+.lcap h4{color:var(--chalk-lt);font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;margin-bottom:8px}
+.lcap p{color:var(--board);font-size:15.5px;line-height:1.5;margin:0 0 12px}
+.lcap a{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-lt);text-decoration:none;border-bottom:1px solid rgba(84,134,214,.4);padding-bottom:2px}
+.lcap a:hover{color:#fff;border-bottom-color:#fff}
+
+/* ---------- reveal (rot & trim signature) ---------- */
+.reveal{position:relative;background:var(--ink);border:1px solid var(--line-strong)}
+.reveal svg{display:block;width:100%;height:auto}
+.reveal-ui{padding:14px 16px 18px;border-top:1px solid var(--line-inv);background:var(--ink)}
+.reveal-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-inv);margin-bottom:11px}
+.reveal-legend b{color:var(--chalk-lt);font-weight:600}
+input[type=range].scrub{-webkit-appearance:none;appearance:none;width:100%;height:26px;background:transparent;cursor:ew-resize;display:block}
+input[type=range].scrub::-webkit-slider-runnable-track{height:2px;background:rgba(231,231,225,.3)}
+input[type=range].scrub::-moz-range-track{height:2px;background:rgba(231,231,225,.3)}
+input[type=range].scrub::-webkit-slider-thumb{-webkit-appearance:none;width:40px;height:26px;margin-top:-12px;background:var(--chalk-lt);border:0;border-radius:1px}
+input[type=range].scrub::-moz-range-thumb{width:40px;height:26px;background:var(--chalk-lt);border:0;border-radius:1px}
+.reveal-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-inv);margin-top:10px;text-align:center}
+
+/* ---------- division cards ---------- */
+.divs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:10px}
+@media(max-width:880px){.divs{grid-template-columns:1fr}}
+.div-card{padding:30px 30px 30px 0;border-top:2px solid var(--chalk);text-decoration:none;color:inherit;display:block;transition:.18s ease}
+@media(min-width:881px){.div-card+.div-card{padding-left:30px;border-left:1px solid var(--line)}}
+@media(max-width:880px){.div-card{padding-right:0}}
+.dark .div-card{border-left-color:var(--line-inv)}
+.div-card:hover{background:rgba(31,79,166,.05)}
+.dark .div-card:hover{background:rgba(84,134,214,.08)}
+.div-card h3{margin-bottom:10px}
+.div-card p{font-size:15.5px;color:var(--muted);margin:0 0 16px}
+.dark .div-card p{color:var(--muted-inv)}
+.div-card ul{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk)}
+.dark .div-card ul{color:var(--chalk-lt)}
+.div-card li{padding:4px 0}
+
+/* ---------- generic content ---------- */
+.prose h3{margin:34px 0 12px}
+.prose h3:first-child{margin-top:0}
+.prose ul{padding-left:0;list-style:none;margin:0 0 20px}
+.prose ul li{position:relative;padding-left:24px;margin-bottom:9px;line-height:1.5}
+.prose ul li::before{content:"";position:absolute;left:0;top:11px;width:11px;height:2px;background:var(--chalk)}
+.dark .prose ul li::before{background:var(--chalk-lt)}
+
+.pull{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(19px,2.5vw,29px);letter-spacing:-.025em;line-height:1.08;border-left:4px solid var(--chalk);padding-left:24px;margin:40px 0 0;max-width:780px}
+.dark .pull{border-left-color:var(--chalk-lt)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--line-strong)}
+.dark .chip{border-color:var(--line-inv);color:var(--board)}
+.chip.hot{border-color:var(--chalk);color:var(--chalk)}
+.dark .chip.hot{border-color:var(--chalk-lt);color:var(--chalk-lt)}
+
+/* ---------- specs table ---------- */
+.spec{width:100%;border-collapse:collapse;margin-top:8px;font-size:15.5px}
+.spec th,.spec td{text-align:left;padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.dark .spec th,.dark .spec td{border-bottom-color:var(--line-inv)}
+.spec th{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);width:190px}
+.dark .spec th{color:var(--muted-inv)}
+@media(max-width:640px){.spec th{width:130px;padding-right:14px}}
+
+/* ---------- steps ---------- */
+.steps{margin-top:4px}
+.step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.dark .step{border-bottom-color:var(--line-inv)}
+.step:last-child{border-bottom:0}
+.step-n{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--chalk);flex:none;width:34px;padding-top:4px}
+.dark .step-n{color:var(--chalk-lt)}
+.step h3{margin-bottom:6px}
+.step p{margin:0;font-size:16px;color:rgba(22,25,26,.78)}
+.dark .step p{color:var(--muted-inv)}
+
+/* ---------- report ---------- */
+.report{border:1px solid var(--line-strong);background:#fff;color:var(--graphite)}
+.report-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:14px 20px;border-bottom:1px solid var(--line-strong);font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+.report-head span{color:var(--muted);font-weight:400}
+.row{display:flex;gap:18px;padding:18px 20px;border-bottom:1px solid var(--line);align-items:flex-start}
+.row:last-child{border-bottom:0}
+.row-k{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;width:96px;flex:none;padding-top:3px;color:var(--muted)}
+.row-v{font-size:15.5px;line-height:1.5}
+.row-v b{font-family:var(--display);text-transform:uppercase;letter-spacing:-.01em;font-size:15px;display:block;margin-bottom:2px}
+.tag{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;margin-left:8px;vertical-align:2px;white-space:nowrap}
+.tag.now{background:#8E2C16;color:#fff}
+.tag.soon{background:#8A6A1F;color:#fff}
+.tag.ok{background:#3C5A38;color:#fff}
+
+/* ---------- work grid ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 34px}
+.fbtn{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 15px;border:1px solid var(--line-strong);background:none;cursor:pointer;color:var(--graphite);transition:.15s ease}
+.fbtn:hover{border-color:var(--chalk);color:var(--chalk)}
+.fbtn[aria-pressed="true"]{background:var(--chalk);border-color:var(--chalk);color:#fff}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px)}
+@media(max-width:900px){.work{grid-template-columns:1fr}}
+.job[hidden]{display:none}
+.shot{position:relative;aspect-ratio:4/3;overflow:hidden;margin:0;border:1px solid var(--line);
+  background:repeating-linear-gradient(45deg,rgba(22,25,26,.05) 0 12px,transparent 12px 24px),var(--paper-2)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .28s ease}
+.shot img.on{opacity:1}
+.shot-ph{position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;
+  text-align:center;padding:16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.shot-ph b{font-weight:600;color:var(--chalk)}
+.shot.loaded .shot-ph{display:none}
+.shot-toggle{position:absolute;left:10px;bottom:10px;display:none;z-index:3}
+.shot.has-both .shot-toggle{display:flex}
+.shot-toggle button{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:7px 12px;border:0;cursor:pointer;background:rgba(11,13,14,.74);color:rgba(231,231,225,.68);transition:.15s ease}
+.shot-toggle button:hover{color:#fff}
+.shot-toggle button[aria-pressed="true"]{background:var(--chalk);color:#fff}
+.job-img{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,rgba(22,25,26,.05) 0 12px,transparent 12px 24px),var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;padding:16px}
+.job-cat{
+  font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--chalk);border-top:2px solid var(--chalk);padding-top:12px;margin:0 0 14px;
+}
+.job h3{margin:16px 0 8px}
+.job-cat + h3{margin-top:0}
+.job p{font-size:15.5px;line-height:1.52;color:rgba(22,25,26,.78);margin:0}
+.job-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);margin-top:10px}
+.job-meta a{text-decoration:none;border-bottom:1px solid rgba(31,79,166,.35)}
+
+/* ---------- related ---------- */
+.related{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:8px}
+@media(max-width:880px){.related{grid-template-columns:1fr}}
+.rel{display:block;text-decoration:none;color:inherit;padding:24px 26px 24px 0;border-top:1px solid var(--line-strong);transition:.16s ease}
+@media(min-width:881px){.rel+.rel{padding-left:26px;border-left:1px solid var(--line)}}
+@media(max-width:880px){.rel{padding-right:0}}
+.rel:hover{background:rgba(31,79,166,.05)}
+.rel h4{font-family:var(--display);font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:7px}
+.rel p{font-size:14.5px;color:var(--muted);margin:0}
+.rel em{font-style:normal;display:block;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--chalk);margin-bottom:9px}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:var(--chalk);color:#fff}
+.cta-band .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:22px;padding-top:44px;padding-bottom:44px}
+.cta-band h2{color:#fff;flex:1;min-width:280px;font-size:clamp(22px,2.8vw,34px)}
+.cta-band .btn{background:#fff;color:var(--chalk)}
+.cta-band .btn:hover{background:var(--ink);color:#fff}
+.cta-band .btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.cta-band .btn-ghost:hover{background:#fff;color:var(--chalk)}
+
+/* ---------- towns ---------- */
+.towns{display:flex;flex-wrap:wrap;gap:9px 0;margin:24px 0 0;padding:0;list-style:none;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.towns li{padding:0 14px;border-right:1px solid var(--line-strong);line-height:1}
+.towns li:first-child{padding-left:0}
+.dark .towns li{border-right-color:var(--line-inv)}
+
+/* ---------- form ---------- */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.form{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-inv)}
+input[type=text],input[type=tel],input[type=email],textarea,select{font-family:var(--body);font-size:16px;color:var(--board);background:transparent;border:1px solid rgba(231,231,225,.26);padding:13px 14px;border-radius:0;width:100%}
+textarea{min-height:112px;resize:vertical}
+select{font-family:var(--mono);font-size:13px;letter-spacing:.04em}
+select option{background:var(--ink);color:var(--board)}
+input:focus,textarea:focus,select:focus{border-color:var(--chalk-lt);outline:none}
+.form .btn{grid-column:1/-1;justify-content:center;margin-top:6px}
+.or{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-inv);margin-top:18px}
+.or a{color:var(--chalk-lt);text-decoration:none;font-weight:600}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--muted-inv);padding:56px 0 34px;border-top:1px solid var(--line-inv)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+@media(max-width:880px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+.fgrid h4{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--chalk-lt);margin-bottom:14px}
+.fgrid ul{list-style:none;margin:0;padding:0}
+.fgrid li{margin-bottom:8px}
+.fgrid a{font-size:14.5px;text-decoration:none;color:var(--muted-inv)}
+.fgrid a:hover{color:var(--board)}
+.fmark b{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.035em;text-transform:uppercase;color:var(--board);display:block}
+.fmark p{font-size:14.5px;margin-top:12px;max-width:280px}
+.fbot{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line-inv);font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase}
+.fbot b{color:var(--board);font-weight:600}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="mark" href="index.html"><b>Bavila Homes</b><span>Carpentry · Framing · Renovation</span></a>
+    <nav class="main"><div class="navitem"><a class="navlink" href="exteriors.html">Exteriors<svg width="9" height="6" viewBox="0 0 9 6"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><div class="drop"><a class="top" href="exteriors.html"><b>All Exteriors</b><span>Repair and restoration of everything outside the walls</span></a><a href="rot-trim.html"><b>Rot &amp; Trim Repair</b><span>Fascia, soffit, casing, corner boards</span></a><a href="siding.html"><b>Siding</b><span>Repair, replacement and matching</span></a><a href="decks-porches.html"><b>Decks &amp; Porches</b><span>New builds and structural rebuilds</span></a></div></div><div class="navitem"><a class="navlink" href="framing.html">Framing<svg width="9" height="6" viewBox="0 0 9 6"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><div class="drop"><a class="top" href="framing.html"><b>All Framing</b><span>The structural work the rest of the trades build on</span></a><a href="additions.html"><b>Additions</b><span>Bump-outs, wings and second stories</span></a><a href="structural-repair.html"><b>Structural Repair</b><span>Rot, sagging, headers, load-bearing</span></a><a href="dormers-garages.html"><b>Dormers &amp; Garages</b><span>Roofline changes and outbuildings</span></a></div></div><div class="navitem"><a class="navlink active" href="renovations.html">Renovations<svg width="9" height="6" viewBox="0 0 9 6"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><div class="drop"><a class="top" href="renovations.html"><b>All Renovations</b><span>Interior remodels, start to finish</span></a><a href="kitchens.html"><b>Kitchens</b><span>Layout changes and full remodels</span></a><a href="bathrooms.html"><b>Bathrooms</b><span>Full gut, waterproofing, tile</span></a><a href="basements.html"><b>Basements &amp; Interiors</b><span>Finishing, trim and millwork</span></a></div></div><div class="navitem"><a class="navlink" href="work.html">What We Find</a></div><div class="navitem"><a class="navlink" href="about.html">About</a></div><a class="btn" href="contact.html" style="margin-left:14px;padding:13px 20px">Get an estimate</a></nav>
+    <a class="tel" href="tel:+12014210080">(201) 421-0080</a>
+    <a class="tel-m" href="tel:+12014210080" aria-label="Call us">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M3.2 1.6a1.2 1.2 0 011.7.1l1.5 1.8a1.2 1.2 0 01-.1 1.6l-.7.7a8.5 8.5 0 003.6 3.6l.7-.7a1.2 1.2 0 011.6-.1l1.8 1.5a1.2 1.2 0 01.1 1.7l-.8.9c-.6.7-1.6.9-2.4.5A15 15 0 011.9 5.4c-.4-.8-.2-1.8.5-2.4z"/></svg>
+      <span>Call</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile" id="mobile"><div class="wrap"><div class="mgroup"><a href="exteriors.html">Exteriors</a><ul><li><a href="rot-trim.html">Rot &amp; Trim Repair</a></li><li><a href="siding.html">Siding</a></li><li><a href="decks-porches.html">Decks &amp; Porches</a></li></ul></div><div class="mgroup"><a href="framing.html">Framing</a><ul><li><a href="additions.html">Additions</a></li><li><a href="structural-repair.html">Structural Repair</a></li><li><a href="dormers-garages.html">Dormers &amp; Garages</a></li></ul></div><div class="mgroup"><a href="renovations.html">Renovations</a><ul><li><a href="kitchens.html">Kitchens</a></li><li><a href="bathrooms.html">Bathrooms</a></li><li><a href="basements.html">Basements &amp; Interiors</a></li></ul></div><div class="mgroup"><a href="work.html">What We Find</a></div><div class="mgroup"><a href="about.html">About</a></div><div class="mgroup"><a href="contact.html">Get an estimate</a></div><div class="mgroup"><a href="tel:+12014210080">(201) 421-0080</a></div></div></div>
+</header>
+<section class="phero"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a><span>/</span><em>Renovations</em></div><h1>Renovations</h1><p class="lede">Interiors, start to finish. Kitchens, bathrooms, basements and millwork — including the structural changes that make a floor plan work rather than just look better.</p></div></section>
+<section><div class="wrap">
+  <p class="eyebrow">Our angle</p>
+  <div class="two">
+    <h2>We renovate structurally</h2>
+    <div class="prose">
+      <p class="lede">Most renovation companies are finish operations. They're good at cabinets, tile and trim, and when the job needs a wall removed or a floor levelled, they bring somebody in.</p>
+      <p>We come at it the other way. We're framing carpenters who finish, which means the ambitious version of your floor plan — the one where the wall comes out and the ceiling opens up — is a normal job for us rather than a complication.</p>
+      <p>It also means fewer surprises. On a house built before 1980, opening a wall reveals something unexpected more often than not. Handling that in-house is the difference between a conversation on Tuesday and a three-week delay.</p>
+    </div>
+  </div>
+  <p class="pull">The layout you actually want usually has a beam in it somewhere.</p>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <p class="eyebrow">Services</p>
+  <div class="two">
+    <h2>What we renovate</h2>
+    <div><p class="lede">Full project management: we hold the schedule, coordinate the trades, and are the single point of contact from demolition to walkthrough.</p></div>
+  </div>
+  <div class="divs">
+    <a class="div-card" href="kitchens.html">
+      <h3>Kitchens</h3>
+      <p>Full remodels and layout changes, including opening walls, relocating services and levelling floors that were never level.</p>
+      <ul><li>Structural layout changes</li><li>Full project management</li></ul>
+    </a>
+    <a class="div-card" href="bathrooms.html">
+      <h3>Bathrooms</h3>
+      <p>Full gut renovations with the waterproofing and subfloor work done properly, because that's what decides whether a bathroom lasts.</p>
+      <ul><li>Waterproofing systems</li><li>Subfloor &amp; joist repair</li></ul>
+    </a>
+    <a class="div-card" href="basements.html">
+      <h3>Basements &amp; interiors</h3>
+      <p>Basement finishing that starts with moisture rather than drywall, plus interior trim, millwork and built-ins throughout the house.</p>
+      <ul><li>Moisture-first approach</li><li>Custom millwork</li></ul>
+    </a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">Living through it</p>
+  <div class="two">
+    <h2>How we run a job in an occupied house</h2>
+    <div class="prose">
+      <ul>
+        <li><strong>Dust containment.</strong> Zip walls and negative air where we're demolishing. It's not perfect — nothing is — but it's the difference between one dusty room and a dusty house.</li>
+        <li><strong>Floor and path protection</strong> on every route between the door and the work area.</li>
+        <li><strong>A written schedule</strong> with the sequence and rough dates, updated when it changes, so you know when the trades are coming and when you'll be without a kitchen.</li>
+        <li><strong>Consistent hours</strong> and a clean site at the end of each day.</li>
+        <li><strong>One point of contact.</strong> You call one person about everything, including the subs.</li>
+        <li><strong>Change orders in writing</strong> before the work happens, never after.</li>
+      </ul>
+      <p>Renovations are disruptive. The goal isn't to pretend otherwise, it's to make the disruption predictable.</p>
+    </div>
+  </div>
+</div></section>
+<section class="tint"><div class="wrap"><p class="eyebrow">Related work</p><h2 style="margin-bottom:30px">Where this usually leads</h2><div class="related"><a class="rel" href="structural-repair.html"><em>Framing</em><h4>Structural repair</h4><p>The work behind an open floor plan, a levelled floor or a removed wall.</p></a><a class="rel" href="additions.html"><em>Framing</em><h4>Additions</h4><p>When the renovation you want doesn't fit inside the footprint you have.</p></a><a class="rel" href="dormers-garages.html"><em>Framing</em><h4>Dormers &amp; garages</h4><p>Attic and garage conversions are renovation and framing at the same time.</p></a></div></div></section>
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Let's talk about what you want to change.</h2>
+    <a class="btn" href="contact.html?service=renovation">Get an estimate</a>
+    <a class="btn btn-ghost" href="tel:+12014210080">Call (201) 421-0080</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fmark">
+      <b>Bavila Homes</b>
+      <p>Carpentry, framing and renovation across northern New Jersey. One crew, from a rotted corner board to a full addition.</p>
+    </div>
+    <div>
+      <h4>Exteriors</h4>
+      <ul>
+        <li><a href="rot-trim.html">Rot &amp; Trim Repair</a></li>
+        <li><a href="siding.html">Siding</a></li>
+        <li><a href="decks-porches.html">Decks &amp; Porches</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Framing</h4>
+      <ul>
+        <li><a href="additions.html">Additions</a></li>
+        <li><a href="structural-repair.html">Structural Repair</a></li>
+        <li><a href="dormers-garages.html">Dormers &amp; Garages</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Renovations</h4>
+      <ul>
+        <li><a href="kitchens.html">Kitchens</a></li>
+        <li><a href="bathrooms.html">Bathrooms</a></li>
+        <li><a href="basements.html">Basements &amp; Interiors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <b>(201) 421-0080</b>
+    <span>NJ HIC #13VH06851300</span>
+    <span>Licensed &amp; fully insured</span>
+    <span>Bergen · Passaic · Essex · Morris · Union</span>
+  </div>
+</div></footer>
+
+<script>
+
+/* nav */
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('mobile');
+  if(b&&m){b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+
+/* rot & trim: drag-to-expose */
+(function(){
+  var scrub=document.getElementById('scrub');
+  if(!scrub) return;
+  var clip=document.getElementById('clipRect'), div=document.getElementById('divider'), W=560;
+  function draw(p){var x=W*(1-p/100);clip.setAttribute('x',x);clip.setAttribute('width',W-x);
+    div.setAttribute('transform','translate('+(x-280)+',0)');}
+  scrub.addEventListener('input',function(){draw(+scrub.value);});
+  draw(+scrub.value);
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var played=false;
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting&&!played){played=true;var t0=null;
+        function step(ts){if(!t0)t0=ts;var k=Math.min((ts-t0)/900,1);
+          var v=50+32*(1-Math.pow(1-k,3));scrub.value=v;draw(v);
+          if(k<1)requestAnimationFrame(step);}
+        setTimeout(function(){requestAnimationFrame(step);},550);}
+    });},{threshold:.4}).observe(document.querySelector('.reveal'));
+  }
+})();
+
+/* home: scope ladder */
+(function(){
+  var btns=document.querySelectorAll('.lbtn');
+  if(!btns.length) return;
+  function set(n){
+    btns.forEach(function(b){b.setAttribute('aria-selected', b.dataset.state===n?'true':'false');});
+    document.querySelectorAll('[data-layer]').forEach(function(g){
+      g.style.opacity = (+g.dataset.layer <= +n) ? '1' : '0';
+    });
+    document.querySelectorAll('.lpane').forEach(function(p){
+      p.hidden = p.dataset.pane !== n;
+    });
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.state);});});
+  set('1');
+})();
+
+/* work: filter */
+(function(){
+  var fs=document.querySelectorAll('.fbtn');
+  if(!fs.length) return;
+  fs.forEach(function(f){f.addEventListener('click',function(){
+    var cat=f.dataset.cat;
+    fs.forEach(function(x){x.setAttribute('aria-pressed', x===f?'true':'false');});
+    document.querySelectorAll('.job').forEach(function(j){
+      j.hidden = !(cat==='all' || (j.dataset.cat||'').split(' ').indexOf(cat)>-1);
+    });
+  });});
+})();
+
+/* photo slots: load what exists, toggle before/after, fall back cleanly */
+(function(){
+  document.querySelectorAll('.shot').forEach(function(sh){
+    var imgs=[].slice.call(sh.querySelectorAll('img')),
+        btns=[].slice.call(sh.querySelectorAll('.shot-toggle button')),
+        ok={};
+    function select(role){
+      imgs.forEach(function(i){i.classList.toggle('on', i.dataset.role===role && !!ok[i.dataset.role]);});
+      btns.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.role===role?'true':'false');});
+    }
+    function refresh(){
+      sh.classList.toggle('has-both', !!(ok.before && ok.after));
+      var show = ok.after ? 'after' : (ok.before ? 'before' : null);
+      sh.classList.toggle('loaded', !!show);
+      if(show) select(show);
+    }
+    imgs.forEach(function(i){
+      if(i.complete && i.naturalWidth>0) ok[i.dataset.role]=true;
+      i.addEventListener('load', function(){ok[i.dataset.role]=true;refresh();});
+      i.addEventListener('error', function(){ok[i.dataset.role]=false;refresh();});
+    });
+    btns.forEach(function(b){b.addEventListener('click',function(){select(b.dataset.role);});});
+    refresh();
+  });
+})();
+
+/* contact: preselect service from ?service= */
+(function(){
+  var sel=document.getElementById('service');
+  if(!sel) return;
+  var v=new URLSearchParams(location.search).get('service');
+  if(!v) return;
+  for(var i=0;i<sel.options.length;i++){
+    if(sel.options[i].value===v){sel.selectedIndex=i;break;}
+  }
+})();
+
+</script>
+</body>
+</html>
