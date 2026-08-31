@@ -26,7 +26,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="tags.js"></script>
 </head>
@@ -119,133 +119,42 @@
   <p class="hnote"><span>Est. Westwood</span><span>NJ HIC #13VH06851300</span><span>Licensed &amp; fully insured</span></p>
 </div>
 
-<div class="ladder">
-<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img"
-     aria-label="Illustration of a house. Selecting a scope level highlights the work at that scale, from trim repair through to a full addition.">
-  <rect width="720" height="430" fill="#111110"/>
-
-  <!-- ground -->
-  <rect x="0" y="380" width="720" height="50" fill="#0D0D0C"/>
-  <line x1="0" y1="380" x2="720" y2="380" stroke="#2B2A26" stroke-width="1.5"/>
-
-  <!-- ===== base house (always) ===== -->
-  <g>
-    <path d="M170 216 L360 116 L550 216 Z" fill="#22211E"/>
-    <path d="M170 216 L360 116 L550 216" fill="none" stroke="#3A3833" stroke-width="1.5"/>
-    <rect x="458" y="146" width="28" height="70" fill="#26241F" stroke="#3A3833" stroke-width="1.5"/>
-    <rect x="200" y="216" width="320" height="164" fill="#1A1917" stroke="#3A3833" stroke-width="1.5"/>
-    <g stroke="#24231F" stroke-width="1.2">
-      <path d="M200 244h320M200 272h320M200 300h320M200 328h320M200 356h320"/>
+<figure class="elev">
+  <svg viewBox="0 0 1200 620" role="img" aria-label="Line elevation of a modern two-storey house with a flat roof, deep overhangs and full-height glazing.">
+    <g fill="none" stroke="#161A1B" stroke-width="1.8">
+      <path d="M60 520 H1140"/>
+      <rect x="150" y="250" width="470" height="270"/>
+      <rect x="620" y="120" width="330" height="400"/>
+      <path d="M112 250 H666"/>
+      <path d="M590 120 H996"/>
     </g>
-    <!-- openings -->
-    <rect x="230" y="248" width="70" height="64" fill="#0A0A09" stroke="#3A3833" stroke-width="1.5"/>
-    <rect x="420" y="248" width="70" height="64" fill="#0A0A09" stroke="#3A3833" stroke-width="1.5"/>
-    <rect x="336" y="300" width="52" height="80" fill="#0A0A09" stroke="#3A3833" stroke-width="1.5"/>
-  </g>
-
-  <!-- ===== layer 1: trim ===== -->
-  <g data-layer="1" style="opacity:0;transition:opacity .35s ease">
-    <rect x="170" y="216" width="350" height="11" fill="#BE9257"/>
-    <rect x="520" y="216" width="30" height="11" fill="#BE9257"/>
-    <rect x="200" y="227" width="14" height="153" fill="#BE9257"/>
-    <rect x="506" y="227" width="14" height="153" fill="#BE9257"/>
-    <g fill="none" stroke="#BE9257" stroke-width="7">
-      <rect x="226" y="244" width="78" height="72"/>
-      <rect x="416" y="244" width="78" height="72"/>
-      <path d="M332 380v-84h60v84"/>
+    <g fill="#96793E" opacity="0.13">
+      <rect x="150" y="290" width="470" height="100"/>
+      <rect x="620" y="160" width="330" height="130"/>
     </g>
-  </g>
-
-  <!-- ===== layer 2: siding field ===== -->
-  <g data-layer="2" style="opacity:0;transition:opacity .35s ease">
-    <rect x="214" y="227" width="292" height="153" fill="#6E5636"/>
-    <g stroke="#8A6A45" stroke-width="1.6">
-      <path d="M214 250h292M214 273h292M214 296h292M214 319h292M214 342h292M214 365h292"/>
+    <g fill="none" stroke="#161A1B" stroke-width="0.9" opacity="0.38">
+      <path d="M180 290 V520 M262 290 V520 M344 290 V520 M426 290 V520 M508 290 V520 M576 290 V520"/>
+      <path d="M150 390 H620"/>
+      <path d="M660 160 V520 M726 160 V520 M792 160 V520 M858 160 V520 M916 160 V520"/>
+      <path d="M620 290 H950"/>
     </g>
-    <rect x="230" y="248" width="70" height="64" fill="#0A0A09"/>
-    <rect x="420" y="248" width="70" height="64" fill="#0A0A09"/>
-    <rect x="336" y="300" width="52" height="80" fill="#0A0A09"/>
-    <g fill="none" stroke="#BE9257" stroke-width="7">
-      <rect x="226" y="244" width="78" height="72"/>
-      <rect x="416" y="244" width="78" height="72"/>
-      <path d="M332 380v-84h60v84"/>
+    <g fill="none" stroke="#161A1B" stroke-width="1.5">
+      <rect x="344" y="420" width="82" height="100"/>
     </g>
-  </g>
-
-  <!-- ===== layer 3: opened wall / structure ===== -->
-  <g data-layer="3" style="opacity:0;transition:opacity .35s ease">
-    <rect x="214" y="227" width="112" height="153" fill="#111110"/>
-    <g fill="#6B6252">
-      <rect x="214" y="227" width="112" height="12"/>
-      <rect x="214" y="366" width="112" height="14"/>
-      <rect x="218" y="239" width="13" height="127"/>
-      <rect x="306" y="239" width="13" height="127"/>
-      <rect x="222" y="248" width="86" height="18"/>
-      <rect x="222" y="300" width="86" height="11"/>
-      <rect x="238" y="266" width="12" height="34"/>
-      <rect x="280" y="266" width="12" height="34"/>
-      <rect x="238" y="311" width="12" height="55"/>
-      <rect x="280" y="311" width="12" height="55"/>
+    <g fill="none" stroke="#96793E" stroke-width="1.1">
+      <path d="M60 560 H1140"/>
+      <path d="M60 552 V572 M150 552 V572 M620 552 V572 M950 552 V572 M1140 552 V572"/>
+      <path d="M1090 120 V520"/>
+      <path d="M1082 120 H1098 M1082 520 H1098"/>
     </g>
-    <!-- water damage -->
-    <rect x="246" y="366" width="66" height="14" fill="#24221B"/>
-    <rect x="306" y="300" width="13" height="66" fill="#24221B"/>
-    <g font-family="IBM Plex Mono,monospace" font-size="10" letter-spacing="1.3" fill="#BE9257">
-      <path d="M330 258h30" stroke="#BE9257" stroke-width="1"/>
-      <circle cx="330" cy="258" r="2.4"/>
-      <text x="366" y="261">HEADER</text>
-      <path d="M330 373h30" stroke="#BE9257" stroke-width="1"/>
-      <circle cx="330" cy="373" r="2.4"/>
-      <text x="366" y="376">SILL PLATE</text>
+    <g font-family="Jost, sans-serif" font-size="15" font-weight="500" fill="#79817E" letter-spacing="2.4">
+      <text x="385" y="600" text-anchor="middle">MAIN VOLUME</text>
+      <text x="785" y="600" text-anchor="middle">TWO STOREY</text>
+      <text x="1112" y="326">28'-6"</text>
     </g>
-  </g>
-
-  <!-- ===== layer 4: new structure ===== -->
-  <g data-layer="4" style="opacity:0;transition:opacity .35s ease">
-    <!-- dormer -->
-    <path d="M394 146 L436 112 L478 146 Z" fill="#6E5636" stroke="#BE9257" stroke-width="1.6"/>
-    <rect x="402" y="146" width="68" height="42" fill="#241F18" stroke="#BE9257" stroke-width="1.6"/>
-    <rect x="418" y="154" width="36" height="28" fill="#0A0A09" stroke="#BE9257" stroke-width="1.4"/>
-    <!-- addition wing -->
-    <path d="M512 274 L592 228 L672 274 Z" fill="#6E5636" stroke="#BE9257" stroke-width="1.6"/>
-    <rect x="524" y="274" width="136" height="106" fill="#241F18" stroke="#BE9257" stroke-width="1.6"/>
-    <rect x="556" y="300" width="72" height="52" fill="#0A0A09" stroke="#BE9257" stroke-width="1.4"/>
-    <g font-family="IBM Plex Mono,monospace" font-size="10" letter-spacing="1.3" fill="#BE9257">
-      <text x="524" y="404">NEW STRUCTURE</text>
-    </g>
-  </g>
-</svg>
-
-<div class="lstates" role="tablist" aria-label="Scope of work">
-  <button class="lbtn" data-state="1" role="tab" aria-selected="true">Repair</button>
-  <button class="lbtn" data-state="2" role="tab" aria-selected="false">Restore</button>
-  <button class="lbtn" data-state="3" role="tab" aria-selected="false">Rebuild</button>
-  <button class="lbtn" data-state="4" role="tab" aria-selected="false">Build</button>
-</div>
-
-<div class="lcap">
-  <div class="lpane" data-pane="1">
-    <h4>Repair · a few days</h4>
-    <p>A rotted fascia run, soft window casing, a corner board that's been caulked one too many times. Small, urgent, and the way most people meet us.</p>
-    <a href="rot-trim.html">Rot &amp; trim repair →</a>
-  </div>
-  <div class="lpane" data-pane="2" hidden>
-    <h4>Restore · one to three weeks</h4>
-    <p>The whole exterior envelope — siding, trim, decks and porches. Repaired where it makes sense, replaced where it doesn't.</p>
-    <a href="exteriors.html">Exterior carpentry →</a>
-  </div>
-  <div class="lpane" data-pane="3" hidden>
-    <h4>Rebuild · two to six weeks</h4>
-    <p>When the damage went past the surface. Sheathing, rafter tails, headers, sill plates, sagging floors — the structural work most contractors sub out.</p>
-    <a href="structural-repair.html">Structural repair →</a>
-  </div>
-  <div class="lpane" data-pane="4" hidden>
-    <h4>Build · two to six months</h4>
-    <p>Additions, dormers, second stories and garages. New structure, framed, dried in and finished under one contract.</p>
-    <a href="additions.html">Additions &amp; new build →</a>
-  </div>
-</div>
-</div>
+  </svg>
+  <figcaption><span>Elevation study &mdash; rebuild, River Vale</span><em>Photography to come</em></figcaption>
+</figure>
 
 </div></div></section>
 
