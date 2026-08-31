@@ -1,107 +1,166 @@
 # Bavila Homes — website
 
-16 static pages. No build step, no dependencies, no database. Upload the folder and it works.
+20 static pages. No build step, no dependencies, no database. Push the folder and it's live.
 
 ---
 
-## Before you launch — 5 things to swap
+## How the site is put together
 
-Do a find-and-replace across all `.html` files.
+Three shared files do all the common work. Change one and every page changes.
 
-| Find | Replace with | Appears |
-|---|---|---|
-| `(555) 123-4567` | your phone number | every page |
-| `+15551234567` | your number, digits only, e.g. `+12015550123` | every page |
-| `13VH00000000` | your NJ HIC registration number | every page |
-| `YOUR_FORM_ID` | your Formspree form ID | contact.html |
-| `Replace with photo` | real before/after images | index, work |
+| File | What it controls |
+|---|---|
+| `styles.css` | The entire look — colour, type, spacing, every component |
+| `site.js` | The menus, and the interactive pieces on a few pages |
+| `tags.js` | Google Analytics and Meta Pixel IDs |
 
-On Mac: open the folder in a text editor like VS Code or Sublime, use Find in Folder, replace all.
+Each `.html` file now holds only that page's own content. There is no CSS inside
+them any more, so you never have to make the same edit twenty times.
 
-### The form
-Create a free account at formspree.io, make a form, copy the ID from the endpoint they give you, paste it in place of `YOUR_FORM_ID` in `contact.html`. Submissions land in your email. Free tier covers 50/month.
+**Design — "Nightfall":** warm near-black ground, Italiana for headlines, Manrope
+for text, bronze accent. Fonts come from Google Fonts; nothing else is fetched
+from outside.
+
+---
+
+## Making changes
+
+### Colour or type, anywhere on the site
+Open `styles.css`. Everything is set at the top in one block:
+
+```css
+--night:#0C0C0B;   /* page background   */
+--bone:#EAE6DE;    /* headings          */
+--text:#ABA599;    /* body copy         */
+--bronze:#BE9257;  /* the accent colour */
+```
+
+Change a value there and it updates across all 20 pages at once.
+
+### Wording on a page
+Open that page's `.html` and edit the text between the tags.
+
+### The menu
+The header and footer markup sit in each `.html` file. If you add or rename a
+page, update it everywhere — search for `class="navitem"` to find the nav and
+`class="fgrid"` to find the footer.
 
 ### Service towns
-Listed in two places — `index.html` and `about.html`, in the `<ul class="towns">` blocks. Edit to match where you actually work. These help you show up in local searches, so use real town names, one per `<li>`.
+In `index.html`, `about.html` and `custom-homes.html`, inside the
+`<ul class="towns">` blocks. Use real town names, one per `<li>` — these help you
+show up in local searches.
+
+### Analytics
+`tags.js` holds the two IDs, both already filled in. Set either to `""` to switch
+that tag off.
 
 ---
 
-## Hosting
+## What the site says, and what it deliberately doesn't
 
-**Easiest:** cloudflare.com/pages or netlify.com — drag the whole folder onto the deploy box. Free, HTTPS included, live in about a minute. Then point your domain at it.
+The copy positions custom homes as the centre of the company, with renovations,
+exteriors and structural work still openly available to hire.
 
-**If you already have hosting:** upload the folder contents to your `public_html` or web root over FTP.
+It describes framing and carpentry as **where the company came from** — a real
+strength, and an unusual road into custom home building. It does **not** state
+crew size, or which trades are self-performed versus subcontracted on a given
+job. That stays flexible, and gets covered in the appointment with the homeowner.
 
-Do not rename `index.html` — that's the page that loads at your domain root.
-
----
-
-## Page structure
-
-```
-index.html                 Home — the whole company
-├── exteriors.html         Exterior carpentry (hub)
-│   ├── rot-trim.html      Rot & Trim Repair      ← point your ads here
-│   ├── siding.html        Siding
-│   └── decks-porches.html Decks & Porches
-├── framing.html           Framing & Structural (hub)
-│   ├── additions.html     Additions
-│   ├── structural-repair.html
-│   └── dormers-garages.html
-├── renovations.html       Renovations (hub)
-│   ├── kitchens.html      Kitchens
-│   ├── bathrooms.html     Bathrooms
-│   └── basements.html     Basements & Interiors
-├── work.html              Portfolio, filterable
-├── about.html             About + service area + credentials
-└── contact.html           Estimate request form
-
-site.css                   All styling — one file
-site.js                    All interactivity — one file
-```
-
----
-
-## How the pages connect
-
-- **Dropdown nav** — every hub page opens to its three sub-pages, from anywhere on the site
-- **Breadcrumbs** on every inner page, back up the chain
-- **"Where this usually leads"** at the bottom of each service page, linking to the services that genuinely follow from it (rot → structural repair, kitchen → structural, deck → rim joist work). These are real relationships in the work, not filler links.
-- **Portfolio entries** link through to the service page behind each job
-- **CTA links carry the service with them.** `contact.html?service=kitchen` arrives with Kitchen already selected in the form dropdown. Every page's call-to-action does this, so you find out what someone was reading when they filled the form in.
-
----
-
-## The two interactive pieces
-
-**Home page — the scope ladder.** Four buttons: Repair / Restore / Rebuild / Build. Each adds a layer to the house illustration and swaps the caption, and each caption links to the relevant service. It makes the range of the company legible in about three seconds, and doubles as navigation.
-
-**Rot & trim page — the wall cutaway.** Drag the slider and the painted exterior peels back to expose wet sheathing, rotted rafter tails and sill plate. It's the argument for hiring a framer instead of a trim installer, made visual. Keyboard-accessible, and it doesn't fight scrolling on a phone.
-
----
-
-## Adding a job to the portfolio
-
-In `work.html`, copy an existing `<div class="job">` block and edit it. The `data-cat` attribute controls which filter shows it — use `exteriors`, `framing`, `renovations`, or several separated by spaces.
-
-Write the entries the way the existing ones are written: what you found, what you did about it, how long it took. The specifics are what sell — "the sheathing behind it was wet through and two rafter tails were going" does more work than any adjective.
+Worth keeping that line when editing.
 
 ---
 
 ## Photos
 
-Every job, three shots, same positions every time:
+The biggest thing this site is still missing. A few pages have image slots that
+stay hidden until a real file exists, so nothing looks broken in the meantime —
+but photography is most of the sale on custom home work.
 
-1. Wide **before**, from the street or a fixed spot
-2. Close-up of **the damage you cut out**
-3. Wide **after**, from the identical angle as #1
+Worth shooting: houses at frame stage, finished exteriors, kitchens and baths,
+and any before/after pair taken from the identical angle.
 
-The middle shot is the valuable one. It's the only real proof the work was done properly, and it's what makes the portfolio credible rather than decorative.
-
-Replace the `<div class="job-img">...</div>` blocks with `<img src="photos/yourfile.jpg" alt="description">`. Put images in a `photos/` folder next to the HTML. Resize to about 1200px wide before uploading so pages stay fast.
+Put files in a `photos/` folder next to the HTML, resized to about 1600px wide.
 
 ---
 
-## Regenerating
+## Pages
 
-The site was generated from a small Python build script. If you have it, edit `pages.py` / `pages2.py` and run `python3 build.py` to rebuild — but note that overwrites anything you edited in `build/` directly. Once you start editing the HTML by hand, ignore the script and just edit the HTML.
+```
+index.html                    Home
+custom-homes.html             Custom homes — the main service page
+├── #new-construction         Build new
+├── #teardown                 Teardown & rebuild
+└── #whole-house              Whole-house rebuild
+renovations.html              Renovations (hub)
+├── kitchens.html
+├── bathrooms.html
+└── basements.html
+exteriors.html                Exteriors (hub)
+├── rot-trim.html             ← a good page to point ads at
+├── siding.html
+├── windows-doors.html
+├── decks-porches.html
+└── outdoor-living.html
+framing.html                  Framing & structural (hub)
+├── additions.html
+├── structural-repair.html
+└── dormers-garages.html
+work.html                     Examples of past work, filterable
+about.html                    About, service area, credentials
+contact.html                  Estimate request form
+thanks.html                   Where the form redirects after sending
+```
+
+The deep pages matter more than they look. Someone searching "siding repair
+Ridgewood" lands on `siding.html`, not the homepage. Keep them.
+
+---
+
+## How the pages connect
+
+- **Dropdown nav** — every hub opens to its sub-pages, from anywhere on the site
+- **Full footer sitemap** — every page listed at the bottom of every page
+- **Breadcrumbs** on inner pages, back up the chain
+- **"Where this usually leads"** blocks link to the services that genuinely follow
+  from each one (rot → structural repair, kitchen → structural, deck → rim joist)
+- **CTA links carry the service with them** — `contact.html?service=kitchen`
+  arrives with Kitchen already chosen in the form, so you know what someone was
+  reading when they filled it in
+
+---
+
+## The interactive pieces
+
+**Homepage — the scope ladder.** Repair / Restore / Rebuild / Build. Each adds a
+layer to the house illustration and swaps the caption, and each caption links
+through. It makes the range of the company legible in about three seconds.
+
+**Rot & trim — the wall cutaway.** Drag the slider and the painted exterior peels
+back to expose wet sheathing and rotted rafter tails. Keyboard-accessible, and it
+doesn't fight scrolling on a phone.
+
+Both live in `site.js` and exit quietly on pages that don't use them.
+
+---
+
+## Adding a job to the portfolio
+
+In `work.html`, copy an existing `<div class="job">` block and edit it. The
+`data-cat` attribute controls which filter shows it — `exteriors`, `framing`,
+`renovations`, or several separated by spaces.
+
+Write them the way the existing ones are written: what you found, what you did,
+how long it took. The specifics sell — "the sheathing behind it was wet through
+and two rafter tails were going" does more than any adjective.
+
+---
+
+## Hosting
+
+The form posts through Netlify Forms (`data-netlify="true"` in `contact.html`),
+so the site is set up for **netlify.com** — connect this repo and it redeploys on
+every push. Submissions land in the Netlify dashboard and can be emailed on.
+
+If you host anywhere else, the form needs a different handler.
+
+Do not rename `index.html` — that's the page that loads at your domain root.
